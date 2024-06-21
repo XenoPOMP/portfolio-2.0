@@ -6,7 +6,7 @@ const createFont = (size: number) => ({
   [`p${size}`]: (mod = '1') =>
     cssPropertiesToTw({
       fontSize: `calc(var(--p${size}) * ${mod})`,
-      lineHeight: '140%',
+      lineHeight: 'normal',
     }),
 });
 
