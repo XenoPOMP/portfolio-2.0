@@ -9,7 +9,14 @@ import type { HeaderProps } from './Header.props';
 const Header: FC<HeaderProps> = () => {
   return (
     <header>
-      <UiContainer className={cn('flex items-center justify-between')}>
+      <UiContainer
+        className={cn('flex items-center justify-between')}
+        style={{
+          paddingTop: 'calc(var(--p-level-2) * .9375)',
+          paddingBottom: 'calc(var(--p-level-2) * .9375)',
+          gap: 'calc(var(--p-level-2) * .9375)',
+        }}
+      >
         <Logo />
       </UiContainer>
     </header>
