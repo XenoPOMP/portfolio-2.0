@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Geologica } from 'next/font/google';
 import { type ReactNode } from 'react';
 
 import CoreLayout from '@/src/components/layout/CoreLayout/CoreLayout';
@@ -10,7 +10,7 @@ import { generateOpenGraph, generateStaticMetadata } from '@/src/utils/seo';
 import { AppConstants } from './app.constants';
 import './globals.scss';
 
-const mainFont = Inter({ subsets: ['latin'] });
+const mainFont = Geologica({ subsets: ['latin'] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const env = useEnv();
