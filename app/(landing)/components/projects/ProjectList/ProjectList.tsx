@@ -3,9 +3,9 @@ import { type FC } from 'react';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer.tsx';
 import { SECTION_PADDING } from '@/src/constants/css-vars.constants.ts';
 
-import type { IntroProps } from './Intro.props';
+import type { ProjectListProps } from './ProjectList.props';
 
-const Intro: FC<IntroProps> = () => {
+const ProjectList: FC<ProjectListProps> = () => {
   return (
     <UiContainer
       style={{
@@ -13,9 +13,9 @@ const Intro: FC<IntroProps> = () => {
         paddingBottom: SECTION_PADDING,
       }}
     >
-      Intro
+      All projects
     </UiContainer>
   );
 };
 
-export default Intro;
+export default ProjectList;
