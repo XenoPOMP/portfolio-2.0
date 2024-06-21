@@ -14,12 +14,9 @@ export const metadata: Metadata = generateStaticMetadata({
 export default function Home() {
   return (
     <LandingLayout>
-      <UiContainer
-        as={'main'}
-        className={cn(styles.mainPage)}
-      >
-        index page
-      </UiContainer>
+      <main className={cn(styles.mainPage)}>
+        <UiContainer>index page</UiContainer>
+      </main>
     </LandingLayout>
   );
 }
