@@ -3,6 +3,7 @@ import { type CustomTheme } from './index';
 export const darkTheme: CustomTheme = {
   colors: {
     highlight: '#22C55E',
+    foreground: '#1A1A1A',
     'highlight-font': '#000000',
     primary: '#0F0E0E',
     'nav-highlight': '#2678C2',

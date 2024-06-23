@@ -8,7 +8,8 @@ type Theme = Defined<Defined<Config['theme']>['extend']>;
  */
 export const lightTheme = {
   colors: {
-    primary: '#FFFFFF',
+    primary: '#F7F7F8',
+    foreground: '#FFFFFF',
     'nav-highlight': '#22C55E',
     'project-preview-primary': '#724AE4',
     highlight: '#2678C2',
