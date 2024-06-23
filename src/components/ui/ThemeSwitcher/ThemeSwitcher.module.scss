@@ -1,0 +1,13 @@
+button.switch {
+  @apply text-font-primary transition-colors
+         aspect-square size-[1.3em] flex-center
+         rounded-[3px];
+
+  &:hover, &.active {
+    @apply bg-highlight text-highlight-font;
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+}
