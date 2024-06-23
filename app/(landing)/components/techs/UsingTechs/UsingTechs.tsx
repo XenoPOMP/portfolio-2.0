@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 
+import Section from '@/src/components/ui/Section';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer.tsx';
 import { SECTION_PADDING } from '@/src/constants/css-vars.constants.ts';
 
@@ -11,8 +12,16 @@ const UsingTechs: FC<UsingTechsProps> = () => {
       style={{
         paddingTop: SECTION_PADDING,
       }}
+      as={'div'}
     >
-      Techs
+      <Section
+        heading={{
+          as: 'h2',
+          children: 'Techs',
+        }}
+      >
+        Content
+      </Section>
     </UiContainer>
   );
 };

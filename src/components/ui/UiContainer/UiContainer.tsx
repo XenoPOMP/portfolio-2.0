@@ -18,10 +18,8 @@ const UiContainer: FC<UiContainerNestedProps> = ({
   style,
   margin = 'calc(var(--p-level-2) * 1.875)',
   maxWidth = '1560px',
-  as = 'section',
+  as: Component = 'section',
 }) => {
-  const Component = as;
-
   return (
     <Component
       style={

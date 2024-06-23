@@ -1,1 +1,2 @@
-export * from './WithIcon.ts';
+export * from './WithIcon';
+export * from './WithHeading';
