@@ -4,8 +4,8 @@ export interface IButtonLabels {
   disabled?: boolean;
 }
 
-export type FrontendTech = 'react' | 'vite';
-export type BackendTech = 'nest' | 'prisma';
+export type FrontendTech = 'react' | 'vite' | 'typescript' | 'redux' | 'nextjs';
+export type BackendTech = 'nest' | 'prisma' | 'mssql';
 
 // All possible technologies (both frontend and backend)
 export type StackTech = FrontendTech | BackendTech;
