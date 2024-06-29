@@ -17,7 +17,7 @@ const MockFont: NextFont = {
 export const mockFonts = () => {
   vi.mock('next/font/google', () => {
     /** List of font names that have to be mocked. */
-    const fontsToMock: GoogleFonts[] = ['Inter', 'Geologica'];
+    const fontsToMock: GoogleFonts[] = ['Inter', 'Geologica', 'Lunasima'];
 
     // Bind mock font to each font name
     const map: Record<string, () => NextFont> = fontsToMock.reduce(

@@ -42,7 +42,7 @@ export class ProjectFactory {
   nonOSS() {
     this.setSecondaryText(undefined);
     this.setSecondaryLink(undefined);
-    this.togglePrimaryButton(false);
+    this.toggleSecondaryButton(false);
     return this;
   }
 
@@ -58,7 +58,7 @@ export class ProjectFactory {
   }
 
   private togglePrimaryButton(newState: boolean) {
-    this.project.primaryButton.disabled = newState;
+    this.project.primaryButton.disabled = !newState;
   }
 
   private setSecondaryText(text?: string) {
@@ -70,6 +70,6 @@ export class ProjectFactory {
   }
 
   private toggleSecondaryButton(newState: boolean) {
-    this.project.secondaryButton.disabled = newState;
+    this.project.secondaryButton.disabled = !newState;
   }
 }
