@@ -25,6 +25,7 @@ export class ProjectFactory {
     this.setPrimaryText('Посетить сайт');
     this.setPrimaryLink(href);
     this.togglePrimaryButton(true);
+    return this;
   }
 
   // Marks project as "open source", that means
@@ -33,6 +34,7 @@ export class ProjectFactory {
     this.setSecondaryText('Исход. код');
     this.setSecondaryLink(href);
     this.toggleSecondaryButton(true);
+    return this;
   }
 
   // Marks project as non-"open source", that means
@@ -41,6 +43,7 @@ export class ProjectFactory {
     this.setSecondaryText(undefined);
     this.setSecondaryLink(undefined);
     this.togglePrimaryButton(false);
+    return this;
   }
 
   /** Returns the project you configured */
