@@ -46,6 +46,18 @@ export class ProjectFactory {
     return this;
   }
 
+  // Setup frontend stack
+  frontendStack(stackObj: typeof Project.prototype.frontendStack) {
+    this.project.frontendStack = stackObj;
+    return this;
+  }
+
+  // Setup backend stack
+  backendStack(stackObj: typeof Project.prototype.backendStack) {
+    this.project.backendStack = stackObj;
+    return this;
+  }
+
   /** Returns the project you configured */
   buildup = () => this.project;
 

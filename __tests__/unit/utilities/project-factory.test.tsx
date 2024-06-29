@@ -18,6 +18,7 @@ describe('ProjectFactory tests', () => {
     expect(factory.website('nonsense')).toBeInstanceOf(ProjectFactory);
     expect(factory.oss('nonsense')).toBeInstanceOf(ProjectFactory);
     expect(factory.nonOSS()).toBeInstanceOf(ProjectFactory);
+    expect(factory.frontendStack({})).toBeInstanceOf(ProjectFactory);
   });
 
   test('Website projects are handled', () => {
@@ -49,6 +50,32 @@ describe('ProjectFactory tests', () => {
       disabled: true,
       link: undefined,
       text: undefined,
+    });
+  });
+
+  test('Frontend stack is handled', () => {
+    const build = new ProjectFactory()
+      .frontendStack({
+        react: true,
+        vite: false,
+      })
+      .buildup();
+
+    expectToDeepEqual(build.frontendStack, {
+      react: true,
+      vite: false,
+    });
+  });
+
+  test('Backend stack is handled', () => {
+    const build = new ProjectFactory()
+      .backendStack({
+        nest: true,
+      })
+      .buildup();
+
+    expectToDeepEqual(build.backendStack, {
+      nest: true,
     });
   });
 });
