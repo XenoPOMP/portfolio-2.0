@@ -24,7 +24,7 @@ article.projectView {
   }
 
   section.text {
-    @apply flex flex-col justify-center;
+    @apply flex flex-col justify-center gap-[2.25em];
 
     grid-area: text;
 
@@ -42,6 +42,10 @@ article.projectView {
 
         line-height: 150%;
       }
+    }
+
+    footer.buttons {
+      background: red;
     }
   }
 }

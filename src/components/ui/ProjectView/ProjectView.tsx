@@ -40,37 +40,44 @@ const ProjectView: FC<ProjectViewProps> = ({
       <section className={cn(styles.preview)}></section>
 
       <section className={cn(styles.text)}>
-        <header className={cn(styles.title)}>
-          {name && (
-            <h3 className={cn('h3-[1.75] font-medium', styles.heading)}>
-              {name}
-            </h3>
-          )}
+        <div>
+          <header className={cn(styles.title)}>
+            {name && (
+              <h3 className={cn('h3-[1.75] font-medium', styles.heading)}>
+                {name}
+              </h3>
+            )}
 
-          {description && <p className={cn(styles.desc)}>{description}</p>}
-        </header>
+            {description && <p className={cn(styles.desc)}>{description}</p>}
+          </header>
 
-        <div
-          className={cn('flex gap-[.75em] min-h-[1.85em]')}
-          style={{
-            marginTop: !!frontendTechsCount || !!backendTechsCount ? '1em' : 0,
-          }}
-        >
-          {!!frontendTechsCount && <StackView stack={frontendStack} />}
+          <div
+            className={cn('flex gap-[.75em] min-h-[1.85em]')}
+            style={{
+              marginTop:
+                !!frontendTechsCount || !!backendTechsCount ? '1em' : 0,
+            }}
+          >
+            {!!frontendTechsCount && <StackView stack={frontendStack} />}
 
-          {!!frontendTechsCount && !!backendTechsCount && (
-            <div
-              aria-hidden
-              className={cn('h-[1.85em] py-[0.3em]')}
-            >
+            {!!frontendTechsCount && !!backendTechsCount && (
               <div
-                className={cn('h-full w-[1px] bg-font-secondary opacity-[48%]')}
-              ></div>
-            </div>
-          )}
+                aria-hidden
+                className={cn('h-[1.85em] py-[0.3em]')}
+              >
+                <div
+                  className={cn(
+                    'h-full w-[1px] bg-font-secondary opacity-[48%]',
+                  )}
+                ></div>
+              </div>
+            )}
 
-          {!!backendTechsCount && <StackView stack={backendStack} />}
+            {!!backendTechsCount && <StackView stack={backendStack} />}
+          </div>
         </div>
+
+        <footer className={cn(styles.buttons)}></footer>
       </section>
     </article>
   );
