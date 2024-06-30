@@ -1,0 +1,15 @@
+button.uiButton {
+  &.primary,
+  &.secondary {
+    @apply py-[.75em] px-[1.5em] font-medium
+           rounded-[.2em] transition-colors;
+  }
+
+  &.primary, &.secondary:hover {
+    @apply bg-btn-primary text-btn-secondary;
+  }
+
+  &.secondary {
+    @apply text-btn-primary border-[1px] border-current;
+  }
+}
