@@ -2,6 +2,7 @@ import { ProjectFactory } from '@/src/data/projects';
 
 export const XenoPlanerProject = new ProjectFactory()
   .name('XENO Planner')
+  .desc('Complex app')
   .frontendStack({
     react: true,
     typescript: true,

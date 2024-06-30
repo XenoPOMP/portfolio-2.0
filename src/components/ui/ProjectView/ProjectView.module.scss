@@ -8,6 +8,12 @@ article.projectView {
   &.reversed {
     grid-template-areas: "text prev";
     grid-template-columns: 1fr max-content;
+
+    section.text > header.title {
+      & > :is(p.desc, h3.heading) {
+        text-align: right;
+      }
+    }
   }
 
   section.preview {
@@ -20,10 +26,24 @@ article.projectView {
   }
 
   section.text {
+    @apply flex flex-col;
+
     grid-area: text;
 
-    h3.heading {
-      line-height: normal;
+    header.title {
+      @apply flex flex-col;
+
+      gap: calc(var(--p-level-2) * .9375);
+
+      h3.heading {
+        line-height: normal;
+      }
+
+      p.desc {
+        @apply text-font-secondary;
+
+        line-height: 150%;
+      }
     }
   }
 }

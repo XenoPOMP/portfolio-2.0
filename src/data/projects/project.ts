@@ -12,6 +12,7 @@ export type StackTech = FrontendTech | BackendTech;
 
 export class Project {
   name?: string;
+  description?: string;
 
   primaryButton: IButtonLabels = {};
   secondaryButton: IButtonLabels = {};

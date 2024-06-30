@@ -64,6 +64,12 @@ export class ProjectFactory {
     return this;
   }
 
+  // Setup project description
+  desc(str: string) {
+    this.project.description = str;
+    return this;
+  }
+
   /** Returns the project you configured */
   buildup = () => this.project;
 

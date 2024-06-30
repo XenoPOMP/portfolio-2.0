@@ -86,4 +86,11 @@ describe('ProjectFactory tests', () => {
 
     expect(build.name).toBe(name);
   });
+
+  test('Project desc is handled', () => {
+    const desc = 'Mock desc';
+    const build = new ProjectFactory().desc(desc).buildup();
+
+    expect(build.description).toBe(desc);
+  });
 });
