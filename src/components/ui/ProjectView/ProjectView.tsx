@@ -59,7 +59,17 @@ const ProjectView: FC<ProjectViewProps> = ({
               </h3>
             )}
 
-            {description && <p className={cn(styles.desc)}>{description}</p>}
+            <section>
+              {description &&
+                description.map((par, i) => (
+                  <p
+                    key={i}
+                    className={cn(styles.desc)}
+                  >
+                    {par}
+                  </p>
+                ))}
+            </section>
           </header>
 
           <div

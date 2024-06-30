@@ -65,7 +65,7 @@ export class ProjectFactory {
   }
 
   // Setup project description
-  desc(str: string) {
+  desc(...str: string[]) {
     this.project.description = str;
     return this;
   }

@@ -15,7 +15,7 @@ export type StackTech = FrontendTech | BackendTech;
 
 export class Project {
   name?: string;
-  description?: string;
+  description?: string[];
   previewImg?: Pick<ComponentProps<typeof Image>, 'src'>['src'];
 
   primaryButton: IButtonLabels = {};
