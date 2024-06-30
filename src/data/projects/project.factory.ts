@@ -1,3 +1,5 @@
+import type { Defined } from '@xenopomp/advanced-types';
+
 import { Project } from './project';
 
 /**
@@ -65,6 +67,12 @@ export class ProjectFactory {
   // Setup project description
   desc(str: string) {
     this.project.description = str;
+    return this;
+  }
+
+  // Setup project preview image
+  previewImg(img: Defined<typeof Project.prototype.previewImg>) {
+    this.project.previewImg = img;
     return this;
   }
 

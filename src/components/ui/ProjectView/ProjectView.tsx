@@ -1,5 +1,6 @@
 import { getObjectEntries } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
+import Image from 'next/image';
 import { type FC, useMemo } from 'react';
 
 import Button from '@/src/components/ui/Button';
@@ -12,6 +13,7 @@ const ProjectView: FC<ProjectViewProps> = ({
   project: {
     name,
     description,
+    previewImg,
     primaryButton,
     secondaryButton,
     frontendStack,
@@ -38,7 +40,15 @@ const ProjectView: FC<ProjectViewProps> = ({
         [`${styles.reversed}`]: reversed,
       })}
     >
-      <section className={cn(styles.preview)}></section>
+      {!!previewImg && (
+        <section className={cn(styles.preview)}>
+          <Image
+            className={cn(styles.previewImg)}
+            src={previewImg}
+            alt={'Alt'}
+          />
+        </section>
+      )}
 
       <section className={cn(styles.text)}>
         <div>

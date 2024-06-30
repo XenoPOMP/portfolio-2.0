@@ -28,11 +28,18 @@ article.projectView {
 
   section.preview {
     @apply bg-project-preview-primary rounded-[.9em]
-           inline-flex place-self-center;
+           inline-flex place-self-center flex-center
+           p-[2em];
 
     width: min(40cqw, 541px);
     grid-area: prev;
     aspect-ratio: 541 / 460.6;
+
+    img.previewImg {
+      aspect-ratio: 461/260;
+      object-fit: contain;
+      border-radius: inherit;
+    }
   }
 
   section.text {

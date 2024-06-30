@@ -1,8 +1,10 @@
+import preview from '@/public/mocks/mock-preview.png';
 import { ProjectFactory } from '@/src/data/projects';
 
 export const XenoPlanerProject = new ProjectFactory()
   .name('XENO Planner')
   .desc('Complex app')
+  .previewImg(preview)
   .frontendStack({
     react: true,
     typescript: true,

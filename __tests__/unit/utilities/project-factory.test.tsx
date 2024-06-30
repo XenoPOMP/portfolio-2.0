@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
 import { expectToDeepEqual } from '@/__tests__/assets/utilities';
+import mockImage from '@/public/mocks/mock-preview.png';
 import { Project, ProjectFactory } from '@/src/data/projects';
 
 describe('ProjectFactory tests', () => {
@@ -20,6 +21,8 @@ describe('ProjectFactory tests', () => {
     expect(factory.oss('nonsense')).toBeInstanceOf(ProjectFactory);
     expect(factory.nonOSS()).toBeInstanceOf(ProjectFactory);
     expect(factory.frontendStack({})).toBeInstanceOf(ProjectFactory);
+    expect(factory.backendStack({})).toBeInstanceOf(ProjectFactory);
+    expect(factory.previewImg(mockImage)).toBeInstanceOf(ProjectFactory);
   });
 
   test('Website projects are handled', () => {
