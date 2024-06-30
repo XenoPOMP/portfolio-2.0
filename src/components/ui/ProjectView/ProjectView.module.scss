@@ -45,7 +45,7 @@ article.projectView {
     }
 
     footer.buttons {
-      background: red;
+      @apply flex gap-[1.5em] flex-wrap
     }
   }
 }

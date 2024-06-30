@@ -2,6 +2,7 @@ import { getObjectEntries } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
 import { type FC, useMemo } from 'react';
 
+import Button from '@/src/components/ui/Button';
 import StackView from '@/src/components/ui/StackView';
 
 import styles from './ProjectView.module.scss';
@@ -77,7 +78,20 @@ const ProjectView: FC<ProjectViewProps> = ({
           </div>
         </div>
 
-        <footer className={cn(styles.buttons)}></footer>
+        <footer className={cn(styles.buttons)}>
+          {!primaryButton.disabled && (
+            <Button href={primaryButton.link}>{primaryButton.text}</Button>
+          )}
+
+          {!secondaryButton.disabled && (
+            <Button
+              href={secondaryButton.link}
+              variant={'secondary'}
+            >
+              {secondaryButton.text}
+            </Button>
+          )}
+        </footer>
       </section>
     </article>
   );
