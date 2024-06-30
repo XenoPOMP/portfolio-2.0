@@ -1,3 +1,5 @@
+@import "src/styles/templates";
+
 article.projectView {
   display: grid;
   grid-template-areas: "prev text";
@@ -16,7 +18,7 @@ article.projectView {
 
   section.preview {
     @apply bg-project-preview-primary rounded-[.9em]
-           inline-flex;
+           inline-flex place-self-center;
 
     width: min(40cqw, 541px);
     grid-area: prev;
@@ -45,7 +47,13 @@ article.projectView {
     }
 
     footer.buttons {
-      @apply flex gap-[1.5em] flex-wrap
+      @apply flex gap-x-[1.5em] gap-y-[.75em] flex-wrap
     }
+  }
+
+  @include endAt(xslg) {
+    display: block;
+
+    section.preview { display: none; }
   }
 }
