@@ -11,10 +11,21 @@ import * as ProjectEntries from '@/src/data/projects/entries';
 import type { ProjectListProps } from './ProjectList.props';
 
 const ProjectList: FC<ProjectListProps> = () => {
-  const projectEntries = useMemo(
-    () => getObjectEntries(ProjectEntries),
-    [ProjectEntries],
-  );
+  const projectEntries = useMemo(() => {
+    const nonFilteredEntries = getObjectEntries(ProjectEntries);
+
+    return nonFilteredEntries.sort(([_a, a], [_b, b]) => {
+      if (a.priority > b.priority) {
+        return 1;
+      }
+
+      if (a.priority < b.priority) {
+        return -1;
+      }
+
+      return 0;
+    });
+  }, [ProjectEntries]);
 
   return (
     <UiContainer as={'div'}>

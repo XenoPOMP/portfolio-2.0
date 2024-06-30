@@ -10,7 +10,13 @@ export interface IButtonLabels {
 export type FrontendTech = 'react' | 'vite' | 'typescript' | 'redux' | 'nextjs';
 export type BackendTech = 'nest' | 'prisma' | 'mssql';
 
-export type Priority = 'high' | 'low' | 'medium';
+/* eslint-disable no-unused-vars */
+export enum Priority {
+  high = 1,
+  medium = 0,
+  low = -1,
+}
+/* eslint-enable no-unused-vars */
 
 // All possible technologies (both frontend and backend)
 export type StackTech = FrontendTech | BackendTech;
@@ -20,7 +26,7 @@ export class Project {
   description?: string[];
   previewImg?: Pick<ComponentProps<typeof Image>, 'src'>['src'];
 
-  priority: Priority = 'low';
+  priority: Priority = Priority.medium;
 
   primaryButton: IButtonLabels = {};
   secondaryButton: IButtonLabels = {};
