@@ -16,6 +16,7 @@ describe('ProjectFactory tests', () => {
     const factory = new ProjectFactory();
 
     expect(factory.website('nonsense')).toBeInstanceOf(ProjectFactory);
+    expect(factory.name('nonsense')).toBeInstanceOf(ProjectFactory);
     expect(factory.oss('nonsense')).toBeInstanceOf(ProjectFactory);
     expect(factory.nonOSS()).toBeInstanceOf(ProjectFactory);
     expect(factory.frontendStack({})).toBeInstanceOf(ProjectFactory);
@@ -77,5 +78,12 @@ describe('ProjectFactory tests', () => {
     expectToDeepEqual(build.backendStack, {
       nest: true,
     });
+  });
+
+  test('Project name is handled', () => {
+    const name = 'Mock name';
+    const build = new ProjectFactory().name(name).buildup();
+
+    expect(build.name).toBe(name);
   });
 });

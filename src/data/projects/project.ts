@@ -11,8 +11,11 @@ export type BackendTech = 'nest' | 'prisma' | 'mssql';
 export type StackTech = FrontendTech | BackendTech;
 
 export class Project {
+  name?: string;
+
   primaryButton: IButtonLabels = {};
   secondaryButton: IButtonLabels = {};
+
   frontendStack: Partial<Record<FrontendTech, boolean>> = {};
   backendStack: Partial<Record<BackendTech, boolean>> = {};
 }

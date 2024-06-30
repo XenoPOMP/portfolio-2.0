@@ -1,0 +1,29 @@
+article.projectView {
+  display: grid;
+  grid-template-areas: "prev text";
+  grid-template-columns: max-content 1fr;
+  container-type: inline-size;
+  gap: calc(var(--p-level-1) * 2.142857);
+
+  &.reversed {
+    grid-template-areas: "text prev";
+    grid-template-columns: 1fr max-content;
+  }
+
+  section.preview {
+    @apply bg-project-preview-primary rounded-[.9em]
+           inline-flex;
+
+    width: min(40cqw, 541px);
+    grid-area: prev;
+    aspect-ratio: 541 / 460.6;
+  }
+
+  section.text {
+    grid-area: text;
+
+    h3.heading {
+      line-height: normal;
+    }
+  }
+}

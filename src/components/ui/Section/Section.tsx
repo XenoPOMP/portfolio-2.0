@@ -19,8 +19,8 @@ const Section: VariableFC<'section', SectionProps> = ({
     >
       {heading && (
         <HtmlHeading
-          className={cn('font-bold p24-[1.875]')}
           {...heading}
+          className={cn('font-bold p24-[1.875]', heading.className)}
           style={{
             marginBottom: PROJECT_LIST_GAP,
             ...heading.style,

@@ -58,6 +58,12 @@ export class ProjectFactory {
     return this;
   }
 
+  // Setup project name
+  name(str: string) {
+    this.project.name = str;
+    return this;
+  }
+
   /** Returns the project you configured */
   buildup = () => this.project;
 

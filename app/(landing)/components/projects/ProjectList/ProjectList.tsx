@@ -1,6 +1,6 @@
 import { getObjectEntries } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 
 import ProjectView from '@/src/components/ui/ProjectView';
 import Section from '@/src/components/ui/Section';
@@ -11,12 +11,20 @@ import * as ProjectEntries from '@/src/data/projects/entries';
 import type { ProjectListProps } from './ProjectList.props';
 
 const ProjectList: FC<ProjectListProps> = () => {
+  const projectEntries = useMemo(
+    () => getObjectEntries(ProjectEntries),
+    [ProjectEntries],
+  );
+
   return (
     <UiContainer as={'div'}>
       <Section
         heading={{
           as: 'h2',
           children: 'Мои проекты',
+          className: cn({
+            '!mb-0': !projectEntries.length,
+          }),
         }}
       >
         <div
@@ -25,7 +33,7 @@ const ProjectList: FC<ProjectListProps> = () => {
             gap: PROJECT_LIST_GAP,
           }}
         >
-          {getObjectEntries(ProjectEntries).map(([_name, project]) => (
+          {projectEntries.map(([_name, project]) => (
             <ProjectView
               key={_name}
               project={project}
