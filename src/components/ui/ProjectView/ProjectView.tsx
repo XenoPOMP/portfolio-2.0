@@ -53,7 +53,7 @@ const ProjectView: FC<ProjectViewProps> = ({
           </header>
 
           <div
-            className={cn('flex gap-[.75em] min-h-[1.85em]')}
+            className={cn('flex gap-[.75em] min-h-[1.85em]', styles.stackGroup)}
             style={{
               marginTop:
                 !!frontendTechsCount || !!backendTechsCount ? '1em' : 0,

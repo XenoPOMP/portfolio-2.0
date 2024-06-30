@@ -11,9 +11,19 @@ article.projectView {
     grid-template-areas: "text prev";
     grid-template-columns: 1fr max-content;
 
-    //section.text > header.title {
-    //  // ...
-    //}
+    section.text {
+      & header.title {
+        justify-content: end;
+
+        h3.heading, p.desc {
+          text-align: right;
+        }
+      }
+
+      .stackGroup, footer.buttons {
+        justify-content: end;
+      }
+    }
   }
 
   section.preview {
