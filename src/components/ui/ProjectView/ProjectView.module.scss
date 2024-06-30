@@ -10,9 +10,7 @@ article.projectView {
     grid-template-columns: 1fr max-content;
 
     section.text > header.title {
-      & > :is(p.desc, h3.heading) {
-        text-align: right;
-      }
+      // ...
     }
   }
 
