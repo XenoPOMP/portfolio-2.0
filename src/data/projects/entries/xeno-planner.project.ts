@@ -5,6 +5,7 @@ export const XenoPlanerProject = new ProjectFactory()
   .name('XENO Planner')
   .desc('Complex app')
   .previewImg(preview)
+  .priority('high')
   .frontendStack({
     react: true,
     typescript: true,

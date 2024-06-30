@@ -1,6 +1,6 @@
 import type { Defined } from '@xenopomp/advanced-types';
 
-import { Project } from './project';
+import { type Priority, Project } from './project';
 
 /**
  * This factory provides a simple and intuitive interface
@@ -14,6 +14,12 @@ export class ProjectFactory {
 
   constructor() {
     this.project = new Project();
+  }
+
+  // Setup project priority
+  priority(priority: Priority) {
+    this.project.priority = priority;
+    return this;
   }
 
   /**
