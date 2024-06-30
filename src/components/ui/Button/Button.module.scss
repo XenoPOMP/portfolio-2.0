@@ -1,4 +1,6 @@
 button.uiButton {
+  @apply select-none;
+
   &.primary,
   &.secondary {
     @apply py-[.75em] px-[1.5em] font-medium
