@@ -5,9 +5,7 @@ import { Project } from './project';
  * for creating project data records.
  *
  * @param init
- * @constructor
- *
- * @todo Realize chain function
+ * @constructors
  */
 export class ProjectFactory {
   private readonly project: Project;
