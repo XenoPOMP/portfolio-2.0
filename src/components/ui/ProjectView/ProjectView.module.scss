@@ -24,7 +24,7 @@ article.projectView {
   }
 
   section.text {
-    @apply flex flex-col;
+    @apply flex flex-col justify-center;
 
     grid-area: text;
 

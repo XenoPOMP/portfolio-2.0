@@ -1,5 +1,8 @@
+import { getObjectEntries } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
+
+import StackView from '@/src/components/ui/StackView';
 
 import styles from './ProjectView.module.scss';
 import type { ProjectViewProps } from './ProjectView.props';
@@ -15,6 +18,19 @@ const ProjectView: FC<ProjectViewProps> = ({
   },
   reversed,
 }) => {
+  const frontendTechsCount = useMemo(
+    () =>
+      getObjectEntries(frontendStack).filter(([_, enabled]) => !!enabled)
+        .length,
+    [frontendStack],
+  );
+
+  const backendTechsCount = useMemo(
+    () =>
+      getObjectEntries(backendStack).filter(([_, enabled]) => !!enabled).length,
+    [frontendStack],
+  );
+
   return (
     <article
       className={cn(styles.projectView, {
@@ -33,6 +49,28 @@ const ProjectView: FC<ProjectViewProps> = ({
 
           {description && <p className={cn(styles.desc)}>{description}</p>}
         </header>
+
+        <div
+          className={cn('flex gap-[.75em] min-h-[1.85em]')}
+          style={{
+            marginTop: !!frontendTechsCount || !!backendTechsCount ? '1em' : 0,
+          }}
+        >
+          {!!frontendTechsCount && <StackView stack={frontendStack} />}
+
+          {!!frontendTechsCount && !!backendTechsCount && (
+            <div
+              aria-hidden
+              className={cn('h-[1.85em] py-[0.3em]')}
+            >
+              <div
+                className={cn('h-full w-[1px] bg-font-secondary opacity-[48%]')}
+              ></div>
+            </div>
+          )}
+
+          {!!backendTechsCount && <StackView stack={backendStack} />}
+        </div>
       </section>
     </article>
   );
