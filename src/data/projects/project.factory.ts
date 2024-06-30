@@ -71,8 +71,8 @@ export class ProjectFactory {
   }
 
   // Setup project description
-  desc(...str: string[]) {
-    this.project.description = str;
+  desc(...paragraphs: string[]) {
+    this.project.description = paragraphs;
     return this;
   }
 
