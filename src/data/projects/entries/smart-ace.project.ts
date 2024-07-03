@@ -1,3 +1,4 @@
+import preview from '@/public/previews/smart-ace-preview.png';
 import { Priority, ProjectFactory } from '@/src/data/projects';
 
 export const SmartAceProject = new ProjectFactory()
@@ -5,6 +6,7 @@ export const SmartAceProject = new ProjectFactory()
   .desc(
     'Этот проект - это мой курсовой проект за 2023 год. Тема проекта - веб-приложение для компании, предоставляющей IT-услуги.',
   )
+  .previewImg(preview)
   .priority(Priority.medium)
   .frontendStack({
     react: true,
