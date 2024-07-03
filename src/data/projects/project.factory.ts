@@ -1,5 +1,7 @@
 import type { Defined } from '@xenopomp/advanced-types';
 
+import defaultPreview from '@/public/previews/no-preview.webp';
+
 import { type Priority, Project } from './project';
 
 /**
@@ -14,6 +16,7 @@ export class ProjectFactory {
 
   constructor() {
     this.project = new Project();
+    this.previewImg(defaultPreview);
   }
 
   // Setup project priority
