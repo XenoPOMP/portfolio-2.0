@@ -46,6 +46,7 @@
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-syntax-highlighter": "^15.5.0",
     "sharp": "^0.33.4",
     "typescript": "^5.5",
     "use-debounce": "^10.0.1",
