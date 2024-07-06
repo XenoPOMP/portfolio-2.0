@@ -91,9 +91,9 @@ describe('ProjectFactory tests', () => {
   });
 
   test('Project desc is handled', () => {
-    const desc = 'Mock desc';
-    const build = new ProjectFactory().desc(desc).buildup();
+    const desc = ['Mock desc', 'Roses are red'];
+    const build = new ProjectFactory().desc(...desc).buildup();
 
-    expect(build.description).toBe(desc);
+    expect(build.description).toStrictEqual(desc);
   });
 });
