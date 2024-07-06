@@ -46,6 +46,8 @@ const ProjectView: FC<ProjectViewProps> = ({
             className={cn(styles.previewImg)}
             src={previewImg}
             alt={'Alt'}
+            width={1869}
+            height={933}
           />
         </section>
       )}
