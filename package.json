@@ -37,7 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@xenopomp/advanced-utils": "^1.2.2",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.19",
     "axios": "1.7.2",
     "classnames": "^2.5.1",
     "lodash.set": "^4.3.2",
