@@ -25,15 +25,17 @@ const Header: FC<HeaderProps> = () => {
       >
         <Logo />
 
-        <section className={cn('flex gap-[.5em]')}>
+        <section className={cn('flex gap-[1em]')}>
           <ThemeSwitcher
             target={'light'}
             icon={Sun}
+            className={'scale-[1.25]'}
           />
 
           <ThemeSwitcher
             target={'dark'}
             icon={Moon}
+            className={'scale-[1.25]'}
           />
         </section>
       </UiContainer>
