@@ -2,7 +2,7 @@ import type { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 
 import HtmlHeading from '@/src/components/ui/HtmlHeading';
-import { calc, cssVar } from '@/src/utils/css';
+import { PROJECT_LIST_GAP } from '@/src/constants/css-vars.constants.ts';
 
 import type { SectionProps } from './Section.props';
 
@@ -19,10 +19,10 @@ const Section: VariableFC<'section', SectionProps> = ({
     >
       {heading && (
         <HtmlHeading
-          className={cn('font-bold p24-[1.875]')}
           {...heading}
+          className={cn('font-bold p24-[1.875]', heading.className)}
           style={{
-            marginBottom: calc(`${cssVar('--p-level-2')} * 1.25`),
+            marginBottom: PROJECT_LIST_GAP,
             ...heading.style,
           }}
         />
